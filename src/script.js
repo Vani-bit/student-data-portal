@@ -2,10 +2,10 @@
 const studentForm = document.getElementById('student-form');
 const studentList = document.getElementById('studentList');
 
-// get stored students from local storage or initialize an empty array
+// get stored students or empty array
 let students = JSON.parse(localStorage.getItem('students')) || [];
 
-// loading students on page load
+// render students on page load
 window.onload = () => {
     renderStudents();
 };
@@ -28,7 +28,7 @@ studentForm.addEventListener('submit', (e) => {
 
     const newStudent = { studentName, studentID, email, contact };
 
-    // Add the new student to the array 
+    // Add the new student  
     students.push(newStudent);
     localStorage.setItem('students', JSON.stringify(students));
     renderStudents();
